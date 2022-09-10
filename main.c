@@ -4,8 +4,8 @@
 
 int main(){
     int option, container;
-    pointer *p;
-    registro in;
+    pointer *point;
+    registro *in;
 
     do
     {
@@ -28,19 +28,21 @@ int main(){
         break;
 
         case 1:
-            cria(p);
+            cria(point);
         break;
 
         case 2:
             printf("*\n//ELEMENTO A SER INSERIDO -> ");
-            printf("%d*c",&in);
-            insere(in, p);
+            scanf("%d*c",&container);
+            in->chave = container;
+            insere(*in, point);
         break;
 
         case 3:
             printf("\n*//ELELMENTO A SER PESQUISADO -> ");
             scanf("%d*c",&container);
-            pesquisa(container, p);
+            in->chave = container;
+            pesquisa(in, *point);
         break;
 
         case 4:

@@ -18,7 +18,7 @@ typedef struct pagina{
 }pagina;
 
 void cria(pointer *dic);
-void pesquisa(int *x, pointer ap);
+void pesquisa(registro *x, pointer ap);
 void ins(registro reg, pointer ap, short *cresceu, registro *regRetorno, pointer *apRetorno);
 void insere(registro reg, pointer *ap);
 void insereNaPag(pointer ap, registro reg, pointer apDir);

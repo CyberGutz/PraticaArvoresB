@@ -4,8 +4,9 @@
 
 void cria(pointer *dic){
   dic = NULL;
+  printf("*                                            *\n");
   printf("*~~~~~~~~PAGINA CRIADA COM SUCESSO!!!~~~~~~~~*\n");
-  system("clear");
+  printf("*                                            *\n");
 }
 
 void pesquisa(registro *x, pointer ap){
@@ -22,7 +23,7 @@ void pesquisa(registro *x, pointer ap){
 
   if(x->chave == ap->r[i-1].chave){
     *x = ap->r[i-1];
-    printf("%d foi encontrado!!!\n",x);
+    printf("O registro foi encontrado!!!\n");
     return;
   }
 
