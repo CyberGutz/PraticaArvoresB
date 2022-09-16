@@ -6,7 +6,7 @@
 #define mm 2*m                  //máximo de registros (mm+1 é o máximo de ponteiros)
 
 typedef struct registro{
-  long chave;
+  int chave;
 }registro;
 
 typedef struct pagina *pointer;
@@ -18,9 +18,10 @@ typedef struct pagina{
 }pagina;
 
 void cria(pointer *dic);
-void pesquisa(registro *x, pointer ap);
+registro pesquisa(registro x, pointer ap);
 void ins(registro reg, pointer ap, short *cresceu, registro *regRetorno, pointer *apRetorno);
 void insere(registro reg, pointer *ap);
 void insereNaPag(pointer ap, registro reg, pointer apDir);
+void imprime(pagina *p);
 
 #endif

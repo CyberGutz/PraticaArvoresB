@@ -5,7 +5,9 @@
 int main(){
     int option, container;
     pointer *point;
-    registro *in;
+    registro search, retorno;
+    registro in;
+    pagina *p;
 
     do
     {
@@ -34,19 +36,19 @@ int main(){
         case 2:
             printf("*\n//ELEMENTO A SER INSERIDO -> ");
             scanf("%d*c",&container);
-            in->chave = container;
-            insere(*in, point);
+            in.chave = container;
+            insere(in, point);
         break;
 
         case 3:
             printf("\n*//ELELMENTO A SER PESQUISADO -> ");
             scanf("%d*c",&container);
-            in->chave = container;
-            pesquisa(in, *point);
+            search.chave = container;
+            retorno = pesquisa(search, *point);
         break;
 
         case 4:
-
+            imprime(p);
         break;
         
         default:
