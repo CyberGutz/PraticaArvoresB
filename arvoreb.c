@@ -64,8 +64,6 @@ void insereNaPag(pointer ap, registro reg, pointer apDir){
 void ins(registro reg, pointer ap, short *cresceu, registro *regRetorno, pointer *apRetorno){
   int i,j;
   pointer apTemp;
-
-  printf("\n\nEntrou ins\n\n");
   
   if(ap == NULL){
     (*cresceu) = TRUE;
@@ -122,7 +120,7 @@ void ins(registro reg, pointer ap, short *cresceu, registro *regRetorno, pointer
     apTemp->n = 0;
     apTemp->p[0] = NULL;
 
-    if(i<m+1){
+    if(i<mm){                       //adia o split e mantém o 1/3
       insereNaPag(apTemp, ap->r[mm-1], ap->p[mm]);
       ap->n--;
       insereNaPag(ap, *regRetorno, *apRetorno);
@@ -163,13 +161,18 @@ void ins(registro reg, pointer ap, short *cresceu, registro *regRetorno, pointer
 void imprime(pagina *p){
   int i;
 
+  printf("%d\n\n\n", p->n);
+
   if(p!=NULL){
-    for(i=0;i<p->n;i++){
+    for(i=0; i < p->n;i++){
+
       printf("[%d]",p->r[i].chave);
+
     }
+
     printf("\n");
 
-    for(i=0;i<=p->n;i++){
+    for(i=0; i <= p->n; i++){
       imprime(p->p[i]);
     }
   }
